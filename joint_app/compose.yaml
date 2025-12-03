@@ -1,0 +1,15 @@
+services:
+  frontend-service:
+    image: frontend_image
+    build:
+      context: ./example-frontend
+      dockerfile: Dockerfile
+    ports: 
+      - "5000:5000"
+  backend-service:
+    image: backend_image
+    build:
+      context: ./example-backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"

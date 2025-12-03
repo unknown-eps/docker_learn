@@ -1,0 +1,16 @@
+services:
+  #service name
+  yt-dlp-ubuntu:
+    #image used for the serive
+    image: my-yt-dlp:latest
+    build:
+      #How to build that image the equivalent to docker build -f <dockerfile> -t <image> <context>
+      context: .
+      dockerfile: ./set_up.dockerfile
+    volumes:
+      - ./output:/mydir
+    # Curretly using manual values
+    user: "1000:1000" 
+
+    # Used in container name while running.
+    container_name: yt-dlp
